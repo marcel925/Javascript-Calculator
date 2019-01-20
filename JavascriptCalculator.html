@@ -1,66 +1,37 @@
-<!DOCTYPE html>
-
 <html>
-
-<head>
-<link rel="stylesheet" type="text/css" href="JavascriptCalculator.css">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-</head>
-
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JavaScript Calculator</title>
+    <link rel="stylesheet" href="javascriptCalculator.css">
+  </head>
   <body>
     <div id="calculator">
-      
-      <p id="name">Javascript Calculator </p>
-      
-      <button id="screen"><p id="paraScreen"> </p> </button>
-      
-      
-      <button id="AC" class="calcButton"> AC </button>
-      
-      <button id="CE" class="calcButton"> CE </button>
-      
-      <button id="percentage" class="calcButton"> % </button>
-      
-      <button id="divide" class="calcButton"> ÷ </button>
-      
-      <button id="seven" class="calcButton"> 7 </button>
-      
-      <button id="eight" class="calcButton"> 8 </button>
-      
-      <button id="nine" class="calcButton"> 9 </button>
-      
-      <button id="multiply" class="calcButton"> X </button>
-    
-      <button id="four" class="calcButton"> 4 </button>
-      
-      <button id="five" class="calcButton"> 5 </button>
-      
-      <button id="six" class="calcButton"> 6 </button>
-      
-      <button id="subtract" class="calcButton"> - </button>
-      
-      <button id="one" class="calcButton"> 1 </button>
-      
-      <button id="two" class="calcButton"> 2 </button>
-      
-      <button id="three" class="calcButton"> 3 </button>
-      
-      <button id="add" class="calcButton"> + </button>
-      
-      <button id="zero" class="calcButton"> 0 </button>
-      
-      <button id="dot" class="calcButton"> . </button>
-      
-      <button id="equal" class="calcButton"> = </button>
-      
-     
-    
+      <p id="name">
+        JavaScript Calculator™
+      </p>
+      <div id="display"></div>
+      <button id="allclear" class="calcButton">AC</button>
+      <button id="clear" class="calcButton">CE</button>
+      <button id="percentage" class="calcButton">%</button>           
+      <button id="divide" class="calcButton operator">÷</button>
+      <button id="seven" class="calcButton numbers">7</button>
+      <button id="eight" class="calcButton numbers">8</button>
+      <button id="nine" class="calcButton numbers">9</button>
+      <button id="multiply" class="calcButton operator">X</button>
+      <button id="four" class="calcButton numbers">4</button>
+      <button id="five" class="calcButton numbers">5</button>
+      <button id="six" class="calcButton numbers">6</button>
+      <button id="subtract" class="calcButton operator">-</button>
+      <button id="one" class="calcButton numbers">1</button>
+      <button id="two" class="calcButton numbers">2</button>
+      <button id="three" class="calcButton numbers">3</button>
+      <button id="add" class="calcButton operator">+</button>
+      <button id="zero" class="calcButton numbers">0</button>
+      <button id="decimal" class="calcButton">.</button>
+      <button id="equals" class="calcButton">=</button>
     </div>
-    
-<script type="text/javascript" src="JavascriptCalculator.js"></script>
-  
+    <script src="javascriptCalculator.js"></script>
   </body>
 </html>
-
