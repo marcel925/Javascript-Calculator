@@ -1,230 +1,101 @@
-function calculator (input1, input2, action) {
-
-  var result; 
-  
-  if (action === "multiply") {
-    result = input1 * input2;
+Array.from(document.getElementsByClassName("operator")).forEach(function(x){
+    x.onclick = function(){
+      let display = document.getElementById("display").innerHTML;
+      if (display){
+        if (display[display.length - 1] == " "){
+          document.getElementById("display").innerHTML = display.substring(0, display.length-3) + " " + this.innerHTML + " ";
+        } else { 
+          document.getElementById("display").innerHTML = document.getElementById("display").innerHTML + " " + this.innerHTML + " ";
+        }
+      }
     }
-  
-  if (action === "divide") {
-    result = input1 / input2;
-    }
-  
-  if (action === "add") {
-    input1 = parseInt(input1);
-    input2 = parseInt(input2);
-    result = input1 + input2;
-    }
-  
-  if (action === "subtract") {
-    result = input1 - input2;
-    }
-  
-  return result;
-}
-
-//calculator(12, 10, "divide");
-
-var input1;
-var input2;
-var action;
-
-$(document).ready(function(){  
-  
-      $("#equal").click(function(){
-      input2 = $("p#paraScreen").html();
-
-      $("p#paraScreen").html(calculator(input1, input2, action));
-        
-      input1 = undefined;
-      input2 = undefined;
-    });
-  
-     $("#CE").click(function(){
-        $("p#paraScreen").html("");
-    });
-  
-    $("#AC").click(function(){
-        $("p#paraScreen").html("");
-      input1 = undefined;
-      input2 = undefined;  
-    });
-  
-        $("#dot").click(function(){
-      
-           if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"    ) {
-        document.getElementById("paraScreen").innerHTML = "0.";
-      }
-      
-       else  {  $("p#paraScreen").append(".");  }
-    });
-
-  
-      $("#zero").click(function(){
-      
-           if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-" ) {
-        document.getElementById("paraScreen").innerHTML = "0";
-      }
-      
-       else  {  $("p#paraScreen").append("0");  }
-    });
-  
-      $("#one").click(function(){
-      
-           if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"  ) {
-        document.getElementById("paraScreen").innerHTML = "1";
-      }
-      
-       else  {  $("p#paraScreen").append("1");  }
-    });
-  
-    $("#two").click(function(){
-             
-          if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"  ) {
-        document.getElementById("paraScreen").innerHTML = "2";
-      }
-      
-       else  {  $("p#paraScreen").append("2");  }
-    });
-  
-    $("#three").click(function(){
-      
-           if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"  ) {
-        document.getElementById("paraScreen").innerHTML = "3";
-      }
-      
-       else  {  $("p#paraScreen").append("3");  }
-    });
-  
-  
-  
-    $("#four").click(function(){
-      
-           if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"  ) {
-        document.getElementById("paraScreen").innerHTML = "4";
-      }
-      
-       else  {  $("p#paraScreen").append("4");  }
-    });
-  
-    $("#five").click(function(){
-             
-          if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"  ) {
-        document.getElementById("paraScreen").innerHTML = "5";
-      }
-      
-       else  {  $("p#paraScreen").append("5");  }
-    });
-  
-    $("#six").click(function(){
-      
-           if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"  ) {
-        document.getElementById("paraScreen").innerHTML = "6";
-      }
-      
-       else  {  $("p#paraScreen").append("6");  }
-    });
-  
-  
-  
-    $("#seven").click(function(){
-      
-           if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"  ) {
-        document.getElementById("paraScreen").innerHTML = "7";
-      }
-      
-       else  {  $("p#paraScreen").append("7");  }
-    });
-  
-    $("#eight").click(function(){
-             
-          if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"  ) {
-        document.getElementById("paraScreen").innerHTML = "8";
-      }
-      
-       else  {  $("p#paraScreen").append("8");  }
-    });
-  
-    $("#nine").click(function(){
-      
-           if ( document.getElementById("paraScreen").innerHTML === "X" || document.getElementById("paraScreen").innerHTML === "÷" || document.getElementById("paraScreen").innerHTML === "+" || document.getElementById("paraScreen").innerHTML === "-"  ) {
-        document.getElementById("paraScreen").innerHTML = "9";
-      }
-      
-       else  {  $("p#paraScreen").append("9");  }
-    });
-  
-    $("#multiply").click(function(){
-      
-      action = "multiply";
-      
-      if (input1 !== undefined) { 
-        input2 = $("p#paraScreen").html();
-        input1 = calculator(input1, input2, action);
-      }
-      
-      if (input1 === undefined) {
-      input1 = $("p#paraScreen").html();
-      }
-      
-      $("p#paraScreen").html("X");
-      
-    });
-  
-  $("#divide").click(function(){
-      
-      action = "divide";
-      
-      if (input1 !== undefined) { 
-        input2 = $("p#paraScreen").html();
-        input1 = calculator(input1, input2, action);
-      }
-      
-      if (input1 === undefined) {
-      input1 = $("p#paraScreen").html();
-      }
-      
-      $("p#paraScreen").html("÷");
-      
-    });
-  
-  $("#subtract").click(function(){
-      
-      action = "subtract";
-      
-      if (input1 !== undefined) { 
-        input2 = $("p#paraScreen").html();
-        input1 = calculator(input1, input2, action);
-      }
-      
-      if (input1 === undefined) {
-      input1 = $("p#paraScreen").html();
-      }
-      
-      $("p#paraScreen").html("-");
-      
-    });
-  
-  $("#add").click(function(){
-      
-      action = "add";
-      
-      if (input1 !== undefined) { 
-        input2 = $("p#paraScreen").html();
-        input1 = calculator(input1, input2, action);
-      }
-      
-      if (input1 === undefined) {
-      input1 = $("p#paraScreen").html();
-      }
-      
-      $("p#paraScreen").html("+");
-      
-    });
-  
-      $("#percentage").click(function(){
-      
-      document.getElementById("paraScreen").innerHTML = document.getElementById("paraScreen").innerHTML * 0.01;
-      
-    });
 });
+
+Array.from(document.getElementsByClassName("numbers")).forEach(function(x){
+    x.onclick = function(){
+      if (document.getElementById("display").innerHTML == "0"){
+        document.getElementById("display").innerHTML = this.innerHTML;
+      } else {
+        document.getElementById("display").innerHTML = document.getElementById("display").innerHTML + this.innerHTML;
+      }
+    }
+});
+
+
+document.getElementById("clear").onclick = function(){
+  document.getElementById("display").innerHTML = "0";
+};
+
+document.getElementById("allclear").onclick = function(){
+  document.getElementById("display").innerHTML = "";
+};
+
+document.getElementById("decimal").onclick = function(){
+  if (document.getElementById("display").innerHTML.length == 0){
+    document.getElementById("display").innerHTML = "0."
+  } else {
+    let display = document.getElementById("display").innerHTML; 
+    if (display[display.length-1] != ""){
+      let arr = display.split(" ");
+      let dots = arr[arr.length-1].split("").filter((x) => x == ".");
+      if (dots.length == 0){
+        document.getElementById("display").innerHTML = document.getElementById("display").innerHTML + ".";
+      }
+    }
+  }
+};
+
+document.getElementById("percentage").onclick = function(){
+  if (document.getElementById("display").innerHTML){
+    document.getElementById("display").innerHTML = (parseFloat(document.getElementById("display").innerHTML) / 100).toString();
+  }
+};
+
+document.getElementById("equals").onclick = function(){
+  if(document.getElementById("display").innerHTML){
+    let display = document.getElementById("display").innerHTML;
+    let string;
+    if (display[display.length] == " "){
+      string = display.substring(0, display.length - 3);
+    } else {
+      string = display;
+    }
+    document.getElementById("display").innerHTML = calculator(string);
+  }
+};
+
+
+//following function example: ("2 / 2 + 3 * 4 - 6") # => 7
+function calculator(string) {
+
+  let arr = string.split(" ");
+
+  //do multiplications and divisions
+  for (let i = 1; i < arr.length; i) {
+    if (arr[i] == "X") {
+      arr[i-1] = parseFloat(arr[i-1]) * parseFloat(arr[i+1]);
+      arr.splice(i, 2);
+    } else if (arr[i] == "÷") {
+      arr[i-1] = parseFloat(arr[i-1]) / parseFloat(arr[i+1]);
+      arr.splice(i, 2);
+    } else {
+      i = i + 2;
+    }
+  }
+
+  //do additions and substractions until down to one number
+  function calculate(){
+    arr[1] == "+" ? arr[0] = parseFloat(arr[0]) + parseFloat(arr[2]) : arr[0] = parseFloat(arr[0]) - parseFloat(arr[2]);
+    arr.splice(1, 2);
+
+    if (arr.length > 2) {
+      calculate();
+    }
+  }
+
+  if (arr.length > 2) {
+    calculate();
+  }
+
+  return arr.toString();
+}
